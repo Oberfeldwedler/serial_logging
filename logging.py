@@ -29,6 +29,8 @@ led = 0
 speicher = ''
 sda1 = ''
 sdb1 = ''
+sdc1 = ''
+sdd1 = ''
 while speicher == '':
     d = os.system('/dev/sdd1')
     c = os.system('/dev/sdc1')
