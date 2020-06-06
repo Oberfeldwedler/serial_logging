@@ -81,11 +81,12 @@ while counter==0:
         datestr = time.strftime("%Y_%m_%d")
         timestr = time.strftime("%H_%M")
         logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
+
     x=ser.readline()
     if GPIO.input(13) == GPIO.HIGH:
         counter = 1
     if(x!=""):
-        logf.write('\n' + time.strftime("%H:%M ") + str(x))
+        logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S") + str(x))
         print x
     else:
         print 'No Data received'
