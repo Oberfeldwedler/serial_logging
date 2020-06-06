@@ -59,7 +59,7 @@ if (speicher != 0):
     os.system('sudo chmod 777 ' + speicher)
     # subprocess.Popen('/home/pi/test.py')
     #Neues Logfile anlegen (Name: YYYY_MM_DD_mm_hh_tracelog.txt) und als Ziel definieren
-    logf = open('/media/config/log' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
+    logf = open('/media/config/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
     #Serielle Verbindung Initiieren
 	#Baudrate 9600 bei FPA
     ser = serial.Serial(
