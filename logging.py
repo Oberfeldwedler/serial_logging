@@ -44,9 +44,9 @@ while speicher == '':
         speicher = '/dev/sdd1'
     if c == 32256:
         speicher = '/dev/sdc1'
-    if a == 32256:
-        speicher = '/dev/sdb1'
     if b == 32256:
+        speicher = '/dev/sdb1'
+    if a == 32256:
         speicher = '/dev/sda1'
     if led == 1:
         led = 0
