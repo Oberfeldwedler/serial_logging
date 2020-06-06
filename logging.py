@@ -57,7 +57,7 @@ if (speicher != 0):
     os.system('sudo mount ' + speicher + ' /media/pi/log -rw')
     os.system('sudo chmod 777 /media/pi/log')
     os.system('sudo chmod 777 ' + speicher)
-    subprocess.Popen('/home/pi/test.py')
+    # subprocess.Popen('/home/pi/test.py')
     #Neues Logfile anlegen (Name: YYYY_MM_DD_mm_hh_tracelog.txt) und als Ziel definieren
     logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
     #Serielle Verbindung Initiieren
