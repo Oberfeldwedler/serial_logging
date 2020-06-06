@@ -2,7 +2,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#Import der benötigten Bibliotheken
+#Import der benoetigten Bibliotheken
 import RPi.GPIO as GPIO
 import time
 import serial
@@ -11,7 +11,7 @@ import os
 
 #Layout der PIN Belegung festlegen
 GPIO.setmode(GPIO.BCM)
-#definieren der benötigten I/O Pins
+#definieren der benoetigten I/O Pins
 GPIO.setup(13, GPIO.IN)
 GPIO.setup(19, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
