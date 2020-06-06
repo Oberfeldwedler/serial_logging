@@ -30,10 +30,18 @@ speicher = ''
 sda1 = ''
 sdb1 = ''
 while speicher == '':
-    a = os.system('/dev/sdb1')
-    b = os.system('/dev/sda1')
-    print a
+    d = os.system('/dev/sdc1')
+    c = os.system('/dev/sdc1')
+    b = os.system('/dev/sdb1')
+    a = os.system('/dev/sda1')
+    print d
+    print c
     print b
+    print a
+    if d == 32256:
+        speicher = '/dev/sdd1'
+    if c == 32256:
+        speicher = '/dev/sdc1'
     if a == 32256:
         speicher = '/dev/sdb1'
     if b == 32256:
