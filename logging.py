@@ -94,7 +94,7 @@ while counter==0:
     if GPIO.input(13) == GPIO.HIGH:
         counter = 1
     if(x!=""):
-        logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S") + str(x))
+        logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(x))
         print x
     else:
         print 'No Data received'
