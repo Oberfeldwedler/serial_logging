@@ -52,14 +52,14 @@ while speicher == '':
 
 if (speicher != 0):
     os.system('sudo umount -l ' + speicher)
-    os.system('sudo rm -r /media/pi/log')
-    os.system('sudo mkdir /media/pi/log')
-    os.system('sudo mount ' + speicher + ' /media/pi/log -rw')
-    os.system('sudo chmod 777 /media/pi/log')
+    os.system('sudo rm -r /media/config/log')
+    os.system('sudo mkdir /media/config/log')
+    os.system('sudo mount ' + speicher + ' /media/config/log -rw')
+    os.system('sudo chmod 777 /media/config/log')
     os.system('sudo chmod 777 ' + speicher)
     # subprocess.Popen('/home/pi/test.py')
     #Neues Logfile anlegen (Name: YYYY_MM_DD_mm_hh_tracelog.txt) und als Ziel definieren
-    logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
+    logf = open('/media/config/log' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
     #Serielle Verbindung Initiieren
 	#Baudrate 9600 bei FPA
     ser = serial.Serial(
@@ -79,7 +79,7 @@ while counter==0:
         logf.close()
         datestr = time.strftime("%Y_%m_%d")
         timestr = time.strftime("%H_%M")
-        logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
+        logf = open('/media/config/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
     x=ser.readline()
     if GPIO.input(13) == GPIO.HIGH:
         counter = 1
