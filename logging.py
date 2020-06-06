@@ -63,8 +63,8 @@ if (speicher != 0):
     #Serielle Verbindung Initiieren
 	#Baudrate 9600 bei FPA
     ser = serial.Serial(
-        port='/dev/ttyAMA0',
-        baudrate = 115200,
+        port='/dev/ttyS0',
+        baudrate = 9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
         bytesize=serial.EIGHTBITS,
@@ -93,4 +93,3 @@ if (speicher !=0):
     os.system('sudo umount ' + speicher)
 GPIO.output(26,GPIO.LOW)
 os.system('sudo poweroff')
-
