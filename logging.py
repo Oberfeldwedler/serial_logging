@@ -30,7 +30,7 @@ speicher = ''
 sda1 = ''
 sdb1 = ''
 while speicher == '':
-    d = os.system('/dev/sdc1')
+    d = os.system('/dev/sdd1')
     c = os.system('/dev/sdc1')
     b = os.system('/dev/sdb1')
     a = os.system('/dev/sda1')
