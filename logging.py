@@ -74,7 +74,7 @@ if (speicher != 0):
 	#Baudrate 9600 bei FPA
 	#Baudrate 115200 bei UGM?? war eingestellt
     ser = serial.Serial(
-        port='/dev/ttyS0',
+        port='/dev/ttyUSB0',
         baudrate = 9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
