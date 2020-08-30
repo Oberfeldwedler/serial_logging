@@ -25,10 +25,10 @@ while speicher == '':
     c = os.system('/dev/sdc1')
     b = os.system('/dev/sdb1')
     a = os.system('/dev/sda1')
-    print d
-    print c
-    print b
-    print a
+    print (d)
+    print (c)
+    print (b)
+    print (a)
     if d == 32256:
         speicher = '/dev/sdd1'
     if c == 32256:
@@ -37,7 +37,7 @@ while speicher == '':
         speicher = '/dev/sdb1'
     if a == 32256:
         speicher = '/dev/sda1'
-    print speicher
+    print (speicher)
     time.sleep(0.5)
 
 if (speicher != 0):
@@ -63,7 +63,7 @@ if (speicher != 0):
     )
 
 
-print 'Start logging'
+print ('Start logging')
 while counter==0:
     if(datestr != time.strftime("%Y_%m_%d")):
         logf.close()
@@ -72,11 +72,12 @@ while counter==0:
         logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
 
     x=ser.readline()
+    x=x.decode('UTF-8')
     if(x!=""):
         logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(x))
-        print x
+        print (x)
     else:
-        print 'No Data received'
+        print ('No Data received')
 if (speicher !=0):
     logf.close()
     os.system('sudo umount ' + speicher)
