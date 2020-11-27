@@ -64,20 +64,25 @@ if (speicher != 0):
 
 
 print ('Start logging')
-while counter==0:
-    if(datestr != time.strftime("%Y_%m_%d")):
-        logf.close()
-        datestr = time.strftime("%Y_%m_%d")
-        timestr = time.strftime("%H_%M")
-        logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
+try:
+    while counter==0:
+        if(datestr != time.strftime("%Y_%m_%d")):
+            logf.close()
+            datestr = time.strftime("%Y_%m_%d")
+            timestr = time.strftime("%H_%M")
+            logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
 
-    x=ser.readline()
-    x=x.decode('UTF-8')
-    if(x!=""):
-        logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(x))
-        print (x)
-    else:
-        print ('No Data received')
+        x=ser.readline()
+        x=x.decode('UTF-8')
+        if(x!=""):
+            logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(x))
+            print (x)
+        else:
+            print ('No Data received')
+except KeyboardInterrupt:
+    print("Press Ctrl-C to terminate while statement")
+    pass
+
 if (speicher !=0):
     logf.close()
     os.system('sudo umount ' + speicher)
