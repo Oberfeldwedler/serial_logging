@@ -88,5 +88,5 @@ except KeyboardInterrupt:
 
 if (speicher !=0):
     logf.close()
-    os.system('sudo umount ' + speicher)
+    os.system('sudo umount -l ' + speicher)
 #os.system('sudo poweroff')
