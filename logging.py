@@ -53,6 +53,7 @@ if (speicher != 0):
     #Serielle Verbindung Initiieren
 	#Baudrate 9600 bei FPA
 	#Baudrate 115200 bei UGM?? war eingestellt
+    #Baudrate APAC 19200
     ser = serial.Serial(
         port='/dev/ttyUSB0',
         baudrate = 9600,
@@ -80,7 +81,9 @@ try:
         else:
             print ('No Data received')
 except KeyboardInterrupt:
-    print("Press Ctrl-C to terminate while statement")
+    os.system('sudo umount ' + speicher)
+    print("Speichermedium ausgeworfen.")
+    print("Logging erfolgreich beendet.")
     pass
 
 if (speicher !=0):
