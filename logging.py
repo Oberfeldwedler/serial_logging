@@ -54,8 +54,17 @@ if (speicher != 0):
 	#Baudrate 9600 bei FPA
 	#Baudrate 115200 bei UGM?? war eingestellt
     #Baudrate APAC 19200
-    ser = serial.Serial(
+    ser1 = serial.Serial(
         port='/dev/ttyUSB0',
+        baudrate = 9600,
+        parity=serial.PARITY_NONE,
+        stopbits=serial.STOPBITS_ONE,
+        bytesize=serial.EIGHTBITS,
+        timeout=.1
+    )
+
+    ser2 = serial.Serial(
+        port='/dev/ttyUSB1',
         baudrate = 9600,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
@@ -73,12 +82,19 @@ try:
             timestr = time.strftime("%H_%M")
             logf = open('/media/pi/log/' + datestr + '_' + timestr + "_tracelog.txt" , "w" )
 
-        x=ser.readline()
-        x=x.decode('UTF-8')
-        if(x!=""):
-            logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(x))
-            print (x)
-        else:
+        x=ser1.readline()
+        y=ser2.readline()
+        xx=x.decode('UTF-8')
+        yy=y.decode('UTF-8')
+        if(xx!=""):
+            logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(xx))
+            ser2.write(x)
+            print (xx)
+        if(yy!=""):
+            logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(yy))
+            ser1.write(y)
+            print (yy)
+        if(xx="" && yy=""):
             print ('No Data received')
 except KeyboardInterrupt:
     os.system('sudo umount ' + speicher)
