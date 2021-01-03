@@ -90,10 +90,12 @@ try:
             logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(xx))
             ser2.write(x)
             print (xx)
+            print (x)
         if(yy!=""):
             logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(yy))
             ser1.write(y)
             print (yy)
+            print (y)
         if(xx=="" and yy==""):
             print ('No Data received')
 except KeyboardInterrupt:
