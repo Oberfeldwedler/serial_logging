@@ -94,7 +94,7 @@ try:
             logf.write('\n' + time.strftime("%Y_%m_%d %H:%M:%S ") + str(yy))
             ser1.write(y)
             print (yy)
-        if(xx="" && yy=""):
+        if(xx=="" and yy==""):
             print ('No Data received')
 except KeyboardInterrupt:
     os.system('sudo umount ' + speicher)
