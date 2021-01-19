@@ -7,7 +7,10 @@ import time
 import serial
 import subprocess
 import os
+import env_file
 
+#load parameters for serial port from env file
+env_file.load('.env')
 
 #Datum und Uhrzeit in zwei verschiedene Strings schreiben
 datestr = time.strftime("%Y_%m_%d")
