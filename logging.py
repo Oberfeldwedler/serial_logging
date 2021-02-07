@@ -7,15 +7,16 @@ import time
 import serial
 import subprocess
 import os
-from dotenv import load_dotenv
 
-#load parameters for serial port from env file
-load_dotenv()
-
-baudrate = os.getenv('baudrate')
-parity = os.getenv('parity')
-stopbits = os.getenv('stopbits')
-bytesize = os.getenv('bytesize')
+#=========================================================================== 
+# Hier Parameter für die serielle Schnittstelle eintragen!!!
+#=========================================================================== 
+baudrate = 9600
+parity = serial.PARITY_NONE
+stopbits = serial.STOPBITS_ONE
+bytesize = serial.EIGHTBITS
+timeout = .1
+#=========================================================================== 
 
 #Datum und Uhrzeit in zwei verschiedene Strings schreiben
 datestr = time.strftime("%Y_%m_%d")
@@ -64,10 +65,10 @@ if (speicher != 0):
     #Baudrate APAC 19200
     ser = serial.Serial(
         port='/dev/ttyUSB0',
-        baudrate = os.getenv('BAUDRATE'),
-        parity = os.getenv('PARITY'),
-        stopbits =  os.getenv('STOPBITS'),
-        bytesize = os.getenv('BYTESIZE'),
+        baudrate = baudrate ,
+        parity = parity,
+        stopbits = stopbits,
+        bytesize = bytesize,
         timeout = .1
     )
 
